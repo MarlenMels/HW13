@@ -37,8 +37,10 @@ public class Hard_Disk {
 
     @Override
     public String toString() {
-        return "Hard Disk( Type " + type +
-                ", memory_size " + memory_size +
-                ", weight " + weight + " )";
+        return "Hard_Disk{" +
+                "type=" + type +
+                ", memory_size=" + memory_size +
+                ", weight=" + weight +
+                '}';
     }
 }

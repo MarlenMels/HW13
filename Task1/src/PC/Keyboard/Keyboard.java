@@ -1,9 +1,9 @@
 package PC.Keyboard;
 
 public class Keyboard {
-    Type type;
-    BackLight check;
-    double weight;
+    private Type type;
+    private BackLight check;
+    private double weight;
 
     public Type getType() {
         return type;
@@ -36,9 +36,11 @@ public class Keyboard {
     }
 
     @Override
-    public String toString(){
-        return "Keyboard( Type = " + type +
-                ", Check = " + check +
-                ", Weight = " + weight + " )";
+    public String toString() {
+        return "Keyboard{" +
+                "type=" + type +
+                ", check=" + check +
+                ", weight=" + weight +
+                '}';
     }
 }

@@ -1,35 +1,33 @@
 package PC;
 
 import PC.Disk.Hard_Disk;
-import PC.Disk.Type;
-import PC.Keyboard.BackLight;
 import PC.Keyboard.Keyboard;
-import PC.Proc.Clock_Rate;
-import PC.Proc.CoresNumber;
-import PC.Proc.Manufacturer;
 import PC.Proc.Processor;
 import PC.RAM.RAM;
 import PC.Screen.Screen;
 
 public class Computer {
-    public static final String VENDOR = "Made in China";
-    public static final String COMPUTER_NAME = "ASUS VIVOBOOK GO 15";
-    Processor processor;
-    Hard_Disk disk;
-    RAM ram;
-    Screen screen;
-    Keyboard keyboard;
+    private Processor processor;
+    private Hard_Disk disk;
+    private RAM ram;
+    private Screen screen;
+    private Keyboard keyboard;
+    private final String VENDOR;
+    private final String COMPUTER_NAME;
 
-    public Computer(Processor processor, Hard_Disk disk, RAM ram, Screen screen, Keyboard keyboard) {
+    public Computer(Processor processor,
+                    Hard_Disk disk,
+                    RAM ram,
+                    Screen screen,
+                    Keyboard keyboard,
+                    String VENDOR, String COMPUTER_NAME) {
         this.processor = processor;
         this.disk = disk;
         this.ram = ram;
         this.screen = screen;
         this.keyboard = keyboard;
-    }
-
-    public double sumWeight() {
-        return disk.getWeight() + ram.getWeight() + screen.getWeight() + keyboard.getWeight();
+        this.VENDOR = VENDOR;
+        this.COMPUTER_NAME = COMPUTER_NAME;
     }
 
     public Processor getProcessor() {
@@ -72,26 +70,33 @@ public class Computer {
         this.keyboard = keyboard;
     }
 
-    @Override
-    public String toString() {
-        return "Computer( Processor: " + processor +
-                ", hard disk: " + disk +
-                ", RAM: " + ram +
-                ", screen: " + screen +
-                ", keyboard: " + keyboard;
+    public String getVENDOR() {
+        return VENDOR;
     }
 
-    public static void main(String[] args) {
-        Processor processor = new Processor(Clock_Rate.HIGH, CoresNumber.LARGE_NUMBER, Manufacturer.TAIWAN, 0.5);
-        Hard_Disk disk = new Hard_Disk(Type.SSD, 512, 0.3);
-        RAM ram = new RAM(PC.RAM.Type.DDR5, 16, 0.4);
-        Keyboard keyboard = new Keyboard(PC.Keyboard.Type.MECHANICAL, BackLight.YES, 0.5);
-        Screen screen = new Screen(PC.Screen.Type.IPS, 15.6, 0.5);
+    public String getCOMPUTER_NAME() {
+        return COMPUTER_NAME;
+    }
 
-        Computer computer = new Computer(processor, disk, ram, screen, keyboard);
-        double weight = computer.sumWeight();
-        System.out.println(computer.toString());
-        System.out.println(weight);
+    public double getWeight() {
+        return processor.getWeight() +
+                disk.getWeight() +
+                ram.getWeight() +
+                screen.getWeight() +
+                keyboard.getWeight();
+    }
+
+    @Override
+    public String toString() {
+        return "Computer{" +
+                "processor=" + processor +
+                ", disk=" + disk +
+                ", ram=" + ram +
+                ", screen=" + screen +
+                ", keyboard=" + keyboard +
+                ", VENDOR='" + VENDOR + '\'' +
+                ", COMPUTER_NAME='" + COMPUTER_NAME + '\'' +
+                '}';
     }
 
 }

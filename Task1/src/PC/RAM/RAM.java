@@ -36,9 +36,11 @@ public class RAM {
     }
 
     @Override
-    public String toString(){
-        return "RAM( Type = " + type +
-                ", size = " + size +
-                ", weight = " + weight + " )";
+    public String toString() {
+        return "RAM{" +
+                "type=" + type +
+                ", size=" + size +
+                ", weight=" + weight +
+                '}';
     }
 }

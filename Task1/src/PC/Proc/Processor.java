@@ -1,10 +1,10 @@
 package PC.Proc;
 
 public class Processor {
-    Clock_Rate GHz;
-    CoresNumber number;
-    Manufacturer country;
-    double weight;
+    private Clock_Rate GHz;
+    private CoresNumber number;
+    private Manufacturer country;
+    private double weight;
 
     public Processor(Clock_Rate GHz, CoresNumber number, Manufacturer country, double weight) {
         this.GHz = GHz;
@@ -47,11 +47,11 @@ public class Processor {
 
     @Override
     public String toString() {
-        return "Processor( " +
-                "GHz = " + GHz +
-                ", number of cores = " + number +
-                ", country = " + country +
-                ", weight = " + weight +
-                " )";
+        return "Processor{" +
+                "GHz=" + GHz +
+                ", number=" + number +
+                ", country=" + country +
+                ", weight=" + weight +
+                '}';
     }
 }

@@ -1,9 +1,9 @@
 package PC.Screen;
 
 public class Screen {
-    double diagonal;
-    Type type;
-    double weight;
+    private double diagonal;
+    private Type type;
+    private double weight;
 
     public Screen(Type type, double diagonal, double weight) {
         this.type = type;
@@ -36,10 +36,11 @@ public class Screen {
     }
 
     @Override
-    public String toString(){
-        return "Screen( Type = " + type +
-                ", Diagonal = " + diagonal +
-                ", Weight = " + weight +
-                " )";
+    public String toString() {
+        return "Screen{" +
+                "diagonal=" + diagonal +
+                ", type=" + type +
+                ", weight=" + weight +
+                '}';
     }
 }
